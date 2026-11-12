@@ -1,0 +1,566 @@
+{
+ "unit": "NOC JTS",
+ "aturan": {
+  "absenAwalMenit": 15,
+  "bukaMenit": 60,
+  "toleransiMenit": 0,
+  "graceKeluarMenit": 240,
+  "mulaiAbsensi": "2026-11-12"
+ },
+ "petugas": [
+  "Sandi",
+  "Yanto",
+  "Rizky",
+  "Rufli"
+ ],
+ "pola": {
+  "pagi": {
+   "SENIN": {
+    "j1": "08:00-11:30",
+    "ist": "11:30-13:00",
+    "j2": "13:00-16:30",
+    "total": 7
+   },
+   "SELASA": {
+    "j1": "08:00-11:30",
+    "ist": "11:30-13:00",
+    "j2": "13:00-16:30",
+    "total": 7
+   },
+   "RABU": {
+    "j1": "08:00-11:30",
+    "ist": "11:30-13:00",
+    "j2": "13:00-16:30",
+    "total": 7
+   },
+   "KAMIS": {
+    "j1": "08:00-11:30",
+    "ist": "11:30-13:00",
+    "j2": "13:00-16:30",
+    "total": 7
+   },
+   "JUMAT": {
+    "j1": "09:30-11:30",
+    "ist": "11:30-13:00",
+    "j2": "13:00-16:30",
+    "total": 5.5
+   },
+   "SABTU": {
+    "j1": "08:00-11:30",
+    "ist": "11:30-13:00",
+    "j2": "13:00-16:00",
+    "total": 6.5
+   },
+   "MINGGU": {
+    "j1": "08:00-11:30",
+    "ist": "11:30-13:00",
+    "j2": "13:00-16:30",
+    "total": 7
+   }
+  },
+  "sore": {
+   "SENIN": {
+    "j1": "16:30-21:00",
+    "ist": "21:00-22:00",
+    "j2": "22:00-24:30",
+    "total": 7
+   },
+   "SELASA": {
+    "j1": "16:30-21:00",
+    "ist": "21:00-22:00",
+    "j2": "22:00-24:30",
+    "total": 7
+   },
+   "RABU": {
+    "j1": "16:30-21:00",
+    "ist": "21:00-22:00",
+    "j2": "22:00-24:30",
+    "total": 7
+   },
+   "KAMIS": {
+    "j1": "16:30-21:00",
+    "ist": "21:00-22:00",
+    "j2": "22:00-24:30",
+    "total": 7
+   },
+   "JUMAT": {
+    "j1": "16:30-22:00",
+    "ist": "-",
+    "j2": "-",
+    "total": 5.5
+   },
+   "SABTU": {
+    "j1": "16:00-20:30",
+    "ist": "20:30-21:00",
+    "j2": "21:00-23:00",
+    "total": 6.5
+   },
+   "MINGGU": {
+    "j1": "16:30-21:00",
+    "ist": "21:00-22:00",
+    "j2": "22:00-24:30",
+    "total": 7
+   }
+  },
+  "malam": {
+   "SENIN": {
+    "j1": "24:30-04:00",
+    "ist": "04:00-04:30",
+    "j2": "04:30-08:00",
+    "total": 7
+   },
+   "SELASA": {
+    "j1": "24:30-04:00",
+    "ist": "04:00-04:30",
+    "j2": "04:30-08:00",
+    "total": 7
+   },
+   "RABU": {
+    "j1": "24:30-04:00",
+    "ist": "04:00-04:30",
+    "j2": "04:30-08:00",
+    "total": 7
+   },
+   "KAMIS": {
+    "j1": "24:30-04:00",
+    "ist": "04:00-04:30",
+    "j2": "04:30-08:00",
+    "total": 7
+   },
+   "JUMAT": {
+    "j1": "22:00-24:30",
+    "ist": "24:30-05:00",
+    "j2": "05:00-08:00",
+    "total": 5.5
+   },
+   "SABTU": {
+    "j1": "23:00-02:00",
+    "ist": "02:00-04:30",
+    "j2": "04:30-08:00",
+    "total": 6.5
+   },
+   "MINGGU": {
+    "j1": "24:30-04:00",
+    "ist": "04:00-04:30",
+    "j2": "04:30-08:00",
+    "total": 7
+   }
+  }
+ },
+ "bulan": {
+  "2026-11": {
+   "1": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": [
+     "Rufli"
+    ]
+   },
+   "2": {
+    "pagi": [
+     "Rufli"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": [
+     "Sandi"
+    ]
+   },
+   "3": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": [
+     "Rizky"
+    ]
+   },
+   "4": {
+    "pagi": [
+     "Rizky",
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": []
+   },
+   "5": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": [
+     "Yanto"
+    ]
+   },
+   "6": {
+    "pagi": [
+     "Yanto",
+     "Sandi"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": []
+   },
+   "7": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": [
+     "Rufli"
+    ]
+   },
+   "8": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": [
+     "Rizky"
+    ]
+   },
+   "9": {
+    "pagi": [
+     "Rizky"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": [
+     "Sandi"
+    ]
+   },
+   "10": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": [
+     "Yanto"
+    ]
+   },
+   "11": {
+    "pagi": [
+     "Yanto",
+     "Sandi"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": []
+   },
+   "12": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": [
+     "Rufli"
+    ]
+   },
+   "13": {
+    "pagi": [
+     "Rufli",
+     "Sandi"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": []
+   },
+   "14": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": [
+     "Rizky"
+    ]
+   },
+   "15": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": [
+     "Yanto"
+    ]
+   },
+   "16": {
+    "pagi": [
+     "Yanto"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": [
+     "Sandi"
+    ]
+   },
+   "17": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": [
+     "Rufli"
+    ]
+   },
+   "18": {
+    "pagi": [
+     "Rufli",
+     "Sandi"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": []
+   },
+   "19": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": [
+     "Rizky"
+    ]
+   },
+   "20": {
+    "pagi": [
+     "Rizky",
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": []
+   },
+   "21": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": [
+     "Yanto"
+    ]
+   },
+   "22": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": [
+     "Rufli"
+    ]
+   },
+   "23": {
+    "pagi": [
+     "Rufli"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": [
+     "Sandi"
+    ]
+   },
+   "24": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": [
+     "Rizky"
+    ]
+   },
+   "25": {
+    "pagi": [
+     "Rizky",
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": []
+   },
+   "26": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": [
+     "Yanto"
+    ]
+   },
+   "27": {
+    "pagi": [
+     "Yanto",
+     "Sandi"
+    ],
+    "sore": [
+     "Rizky"
+    ],
+    "malam": [
+     "Rufli"
+    ],
+    "libur": []
+   },
+   "28": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Yanto"
+    ],
+    "malam": [
+     "Rizky"
+    ],
+    "libur": [
+     "Rufli"
+    ]
+   },
+   "29": {
+    "pagi": [
+     "Sandi"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": [
+     "Rizky"
+    ]
+   },
+   "30": {
+    "pagi": [
+     "Rizky"
+    ],
+    "sore": [
+     "Rufli"
+    ],
+    "malam": [
+     "Yanto"
+    ],
+    "libur": [
+     "Sandi"
+    ]
+   }
+  }
+ }
+}
