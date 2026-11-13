@@ -61,9 +61,6 @@ def main(src, dst):
     if os.path.exists(dst):
         data = json.load(open(dst, encoding="utf-8"))
     data.setdefault("unit", "NOC JTS")
-    data.setdefault("aturan", {"absenAwalMenit": 15, "bukaMenit": 60,
-                               "toleransiMenit": 0, "graceKeluarMenit": 240,
-                               "mulaiAbsensi": f"{y.group(1)}-{m:02d}-01"})
     data["petugas"] = sorted(set(data.get("petugas", [])) | set(petugas),
                              key=lambda n: (data.get("petugas", []) + petugas).index(n))
     data["pola"] = pola

@@ -1,12 +1,7 @@
 {
-  "name": "absensi-noc-jts",
-  "version": "1.0.0",
+  "name": "jadwal-noc-jts",
+  "version": "2.0.0",
   "private": true,
-  "description": "Buku absen dan jadwal shift petugas NOC JTS",
-  "scripts": {
-    "dev": "node scripts/dev-server.js",
-    "dev:memori": "NOC_DEV_MEMORY=1 node scripts/dev-server.js",
-    "test": "node --test test/core.test.js test/api.test.js"
-  },
-  "engines": { "node": ">=20" }
+  "description": "Jadwal shift petugas NOC JTS",
+  "scripts": { "dev": "npx serve public -l 3000" }
 }

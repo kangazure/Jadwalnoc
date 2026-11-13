@@ -1,12 +1,5 @@
 {
  "unit": "NOC JTS",
- "aturan": {
-  "absenAwalMenit": 15,
-  "bukaMenit": 60,
-  "toleransiMenit": 0,
-  "graceKeluarMenit": 240,
-  "mulaiAbsensi": "2026-11-12"
- },
  "petugas": [
   "Sandi",
   "Yanto",

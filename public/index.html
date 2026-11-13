@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Absensi NOC JTS</title>
-<meta name="description" content="Buku absen dan jadwal shift petugas NOC JTS.">
+<title>Jadwal NOC JTS</title>
+<meta name="description" content="Jadwal shift petugas NOC JTS.">
 <meta name="theme-color" content="#ece8dd">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -16,7 +16,7 @@
   <header class="kop">
     <div class="merek">
       <h1>NOC JTS</h1>
-      <p>Buku absen petugas · <span id="bulan-label"></span></p>
+      <p>Jadwal shift petugas · <span id="bulan-label"></span></p>
     </div>
     <div class="jam">
       <div class="jam-angka"><span id="jam-hm">--:--</span><span id="jam-s">:--</span></div>
@@ -25,46 +25,33 @@
   </header>
 
   <nav class="tab" role="tablist" aria-label="Menu">
-    <button role="tab" id="t-absen" aria-controls="v-absen" aria-selected="true">Absen</button>
-    <button role="tab" id="t-jadwal" aria-controls="v-jadwal" aria-selected="false">Jadwal</button>
-    <button role="tab" id="t-rekap" aria-controls="v-rekap" aria-selected="false">Rekap</button>
+    <button role="tab" id="t-hari" aria-controls="v-hari" aria-selected="true">Hari ini</button>
+    <button role="tab" id="t-jadwal" aria-controls="v-jadwal" aria-selected="false">Jadwal bulan</button>
   </nav>
 
-  <div id="banner" class="banner" hidden></div>
-
   <main>
-    <!-- ===== ABSEN ===== -->
-    <section id="v-absen" role="tabpanel" aria-labelledby="t-absen">
-      <div class="dua-kolom">
-        <div>
-          <h2 class="label">Petugas jaga</h2>
-          <ul id="roster" class="roster"></ul>
-        </div>
-
-        <div class="panel">
-          <h2 class="label">Absen atas nama</h2>
-          <div class="p-nama" id="p-nama">Pilih nama</div>
-          <div id="p-shift" class="p-shift"></div>
-
-          <div class="form">
-            <div id="pin-wrap" class="pin" hidden>
-              <label for="pin">PIN</label>
-              <input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="••••">
-            </div>
-            <div class="tombol">
-              <button id="b-masuk" class="btn utama" type="button" disabled>Absen masuk</button>
-              <button id="b-pulang" class="btn" type="button" disabled>Absen pulang</button>
-            </div>
-            <p id="pesan" class="pesan" role="status" aria-live="polite"></p>
-          </div>
+    <!-- ===== HARI INI ===== -->
+    <section id="v-hari" role="tabpanel" aria-labelledby="t-hari">
+      <div class="bar">
+        <h2 class="label" id="h-judul">Jaga</h2>
+        <div class="kontrol">
+          <button id="h-prev" class="btn kecil" type="button">&larr; Kemarin</button>
+          <button id="h-kini" class="btn kecil" type="button">Hari ini</button>
+          <button id="h-next" class="btn kecil" type="button">Besok &rarr;</button>
         </div>
       </div>
+      <div class="tgl-besar" id="h-tgl"></div>
+      <div id="h-lanjut" class="lanjut" hidden></div>
+      <ul id="papan" class="papan"></ul>
     </section>
 
     <!-- ===== JADWAL ===== -->
     <section id="v-jadwal" role="tabpanel" aria-labelledby="t-jadwal" hidden>
       <div class="bar">
-        <h2 class="label">Jadwal shift</h2>
+        <div class="kontrol">
+          <h2 class="label">Jadwal shift</h2>
+          <select id="j-bulan" aria-label="Bulan"></select>
+        </div>
         <div id="f-jadwal" class="filter" role="group" aria-label="Sorot petugas"></div>
       </div>
       <div class="gulung">
@@ -75,75 +62,12 @@
       <div class="gulung">
         <table class="tabel pola" id="tb-pola"></table>
       </div>
-      <p class="catatan">Jam di atas 24:00 berarti lewat tengah malam. Absen dilakukan 15 menit sebelum jam kerja efektif dimulai; khusus Jumat pagi jam efektif dimulai 09:30.</p>
-    </section>
-
-    <!-- ===== REKAP ===== -->
-    <section id="v-rekap" role="tabpanel" aria-labelledby="t-rekap" hidden>
-      <div class="bar">
-        <h2 class="label">Rekap absensi</h2>
-        <div class="kontrol">
-          <label>Bulan <select id="r-bulan"></select></label>
-          <label>Petugas <select id="r-nama"></select></label>
-          <button id="r-csv" class="btn kecil" type="button">Unduh CSV</button>
-        </div>
-      </div>
-      <div class="gulung">
-        <table class="tabel ringkasan" id="tb-ringkasan"></table>
-      </div>
-
-      <h2 class="label spasi">Rincian per shift</h2>
-      <div class="gulung">
-        <table class="tabel rincian" id="tb-rekap"></table>
-      </div>
+      <p class="catatan">Jam di atas 24:00 berarti lewat tengah malam. Khusus Jumat pagi, jam kerja efektif dimulai 09:30.</p>
     </section>
   </main>
 
-  <footer class="kaki">
-    <span id="kaki-mode"></span>
-  </footer>
+  <footer class="kaki">Jadwal diperbarui dari file jadwal bulanan NOC JTS.</footer>
 </div>
-
-<!-- dialog konfirmasi pulang cepat -->
-<dialog id="dlg-konfirm">
-  <form method="dialog">
-    <h3>Pulang sebelum shift selesai?</h3>
-    <p id="konfirm-teks"></p>
-    <div class="dlg-aksi">
-      <button class="btn" value="batal">Batal</button>
-      <button class="btn utama" value="ya" id="konfirm-ya">Ya, absen pulang</button>
-    </div>
-  </form>
-</dialog>
-
-<!-- dialog koreksi admin -->
-<dialog id="dlg-koreksi">
-  <form id="f-koreksi" method="dialog">
-    <h3>Koreksi absen</h3>
-    <p id="k-info" class="dlg-info"></p>
-    <label>Status
-      <select id="k-status">
-        <option value="hadir">Hadir</option>
-        <option value="izin">Izin</option>
-        <option value="sakit">Sakit</option>
-        <option value="cuti">Cuti</option>
-      </select>
-    </label>
-    <div class="dua">
-      <label>Masuk <input type="datetime-local" id="k-masuk"></label>
-      <label>Pulang <input type="datetime-local" id="k-pulang"></label>
-    </div>
-    <label>Catatan <input type="text" id="k-catatan" maxlength="200" placeholder="mis. lupa absen, tukar shift"></label>
-    <label id="k-pin-wrap">PIN admin <input type="password" id="k-pin" inputmode="numeric" autocomplete="off"></label>
-    <p id="k-pesan" class="pesan"></p>
-    <div class="dlg-aksi">
-      <button type="button" class="btn kecil bahaya" id="k-hapus">Hapus catatan</button>
-      <span class="renggang"></span>
-      <button type="button" class="btn" id="k-batal">Batal</button>
-      <button type="submit" class="btn utama" id="k-simpan">Simpan</button>
-    </div>
-  </form>
-</dialog>
 
 <script src="/lib/core.js"></script>
 <script src="/app.js"></script>

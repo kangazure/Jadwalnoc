@@ -80,10 +80,6 @@ button, input, select { font: inherit; color: inherit; }
 .tab button:hover { color: var(--tinta); }
 .tab button[aria-selected="true"] { color: var(--tinta); border-bottom-color: var(--aksen); }
 
-.banner {
-  margin: -8px 0 22px; padding: 10px 14px; background: var(--kertas-2);
-  border-left: 4px solid var(--aksen); font-size: 14px; color: var(--tinta);
-}
 
 /* ---------- elemen umum ---------- */
 .label {
@@ -124,45 +120,6 @@ select { padding-right: 8px; }
 .n-ok::before, .n-warn::before, .n-bad::before, .n-info::before, .n-aksen::before {
   content: ""; display: inline-block; width: 8px; height: 8px; background: currentColor; margin-right: 7px; vertical-align: 1px;
 }
-
-/* ---------- absen ---------- */
-.dua-kolom { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 48px; align-items: start; }
-
-.roster { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--tinta); }
-.roster li { border-bottom: 1px solid var(--garis); }
-.roster button {
-  display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; width: 100%; text-align: left;
-  background: none; border: 0; padding: 14px 12px; cursor: pointer; align-items: baseline;
-}
-.roster button:hover { background: var(--kertas-2); }
-.roster button[aria-pressed="true"] { background: var(--tinta); color: var(--kertas); }
-.roster .nm { font-weight: 800; font-stretch: 70%; font-size: 30px; line-height: 1.05; text-transform: uppercase; letter-spacing: .01em; }
-.roster .st { font: 500 13px/1.3 var(--mono); text-align: right; }
-.roster .sub { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; font: 400 13px/1.3 var(--mono); color: var(--abu); }
-.roster button[aria-pressed="true"] .sub { color: inherit; opacity: .8; }
-.roster button[aria-pressed="true"] .n-ok, .roster button[aria-pressed="true"] .n-warn, .roster button[aria-pressed="true"] .n-bad,
-.roster button[aria-pressed="true"] .n-info, .roster button[aria-pressed="true"] .n-diam, .roster button[aria-pressed="true"] .n-aksen { color: inherit; }
-
-.panel { border: 2px solid var(--tinta); padding: 22px 24px 26px; background: var(--kertas-2); }
-.p-nama { font-weight: 850; font-stretch: 68%; font-size: 46px; line-height: 1; text-transform: uppercase; margin-bottom: 18px; }
-.p-nama.kosong { color: var(--abu); }
-.p-shift { min-height: 150px; }
-.shift-kepala { display: flex; align-items: center; gap: 12px; font: 500 13px/1 var(--mono); color: var(--abu); }
-.shift-jam { font: 500 38px/1.1 var(--mono); margin: 12px 0 14px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
-.shift-jam span { color: var(--abu); padding: 0 .25em; }
-.libur-besar { font-weight: 850; font-stretch: 68%; font-size: 40px; line-height: 1; text-transform: uppercase; margin: 6px 0 10px; }
-.rincian-s { display: grid; grid-template-columns: max-content 1fr; gap: 6px 22px; margin: 0; font-size: 15px; padding-top: 12px; border-top: 1px solid var(--garis); }
-.rincian-s dt { color: var(--abu); font: 500 12px/1.9 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
-.rincian-s dd { margin: 0; font-variant-numeric: tabular-nums; }
-.rincian-s dd.mono { font-family: var(--mono); font-size: 14px; }
-
-.form { margin-top: 22px; padding-top: 20px; border-top: 2px solid var(--tinta); }
-.pin { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
-.pin label { font: 600 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--abu); }
-.pin input { width: 150px; font: 500 20px/1 var(--mono); letter-spacing: .3em; text-align: center; }
-.tombol { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.pesan { min-height: 1.5em; margin: 14px 0 0; font-size: 15px; }
-.pesan.ok { color: var(--ok); } .pesan.bad { color: var(--bad); } .pesan.warn { color: var(--warn); }
 
 /* ---------- tabel ---------- */
 .bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
@@ -208,41 +165,30 @@ select { padding-right: 8px; }
 @media (prefers-color-scheme: dark) { .jadwal.sorot .nm.on { color: #f4efe3; } }
 
 .pola td:first-child { white-space: nowrap; }
-.ringkasan th, .ringkasan td { white-space: nowrap; }
-.ringkasan td.nm { font-weight: 800; font-stretch: 72%; font-size: 20px; text-transform: uppercase; }
-.ringkasan td.nol { color: var(--garis); }
-.rincian td.act { text-align: right; }
-.link {
-  background: none; border: 0; padding: 4px 0; cursor: pointer; color: var(--abu); text-decoration: underline; text-underline-offset: 3px;
-  font: 500 12px/1 var(--mono); text-transform: uppercase; letter-spacing: .06em; min-height: 28px;
-}
-.link:hover { color: var(--aksen); }
-.rincian .sub { display: block; font: 400 11px/1.3 var(--mono); color: var(--abu); }
 .kosong-teks { padding: 22px 12px; color: var(--abu); }
 
 .kaki { margin-top: 48px; padding-top: 12px; border-top: 1px solid var(--garis); font: 400 12px/1.4 var(--mono); color: var(--abu); }
 
-/* ---------- dialog ---------- */
-dialog {
-  border: 2px solid var(--tinta); border-radius: 0; padding: 24px; background: var(--kertas-2); color: var(--tinta);
-  width: min(460px, calc(100vw - 32px));
-}
-dialog::backdrop { background: rgba(20, 19, 14, .55); }
-dialog h3 { margin: 0 0 8px; font-weight: 800; font-stretch: 75%; font-size: 26px; text-transform: uppercase; line-height: 1.05; }
-dialog p { margin: 0 0 14px; }
-dialog .dlg-info { font: 500 13px/1.4 var(--mono); color: var(--abu); }
-dialog label { display: block; margin-bottom: 12px; font: 600 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--abu); }
-dialog label input, dialog label select { display: block; width: 100%; margin-top: 6px; font: 400 15px var(--sans); text-transform: none; letter-spacing: 0; color: var(--tinta); }
-dialog .dua { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
-dialog input { min-width: 0; }
-dialog .dua input { padding: 10px 6px; font-size: 14px; }
-.dlg-aksi { display: flex; gap: 10px; justify-content: flex-end; align-items: center; margin-top: 18px; flex-wrap: wrap; }
-.dlg-aksi .renggang { flex: 1; }
+/* ---------- papan hari ini ---------- */
+.tgl-besar { font-weight: 850; font-stretch: 68%; font-size: 40px; line-height: 1; text-transform: uppercase; margin: 4px 0 18px; }
+.lanjut { margin: 0 0 16px; padding: 10px 14px; background: var(--kertas-2); border-left: 4px solid var(--aksen); font-size: 14px; }
+.papan { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--tinta); }
+.papan li { display: grid; grid-template-columns: 150px 1fr auto; gap: 8px 24px; align-items: center; padding: 18px 12px; border-bottom: 1px solid var(--garis); }
+.papan li.jalan { background: var(--tinta); color: var(--kertas); }
+.papan .wkt { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.papan .jam-s { font: 500 15px/1 var(--mono); }
+.papan .org { font-weight: 800; font-stretch: 70%; font-size: 34px; line-height: 1.05; text-transform: uppercase; }
+.papan .org i { font-style: normal; color: var(--abu); font-weight: 400; padding: 0 .25em; }
+.papan li.jalan .org i { color: inherit; opacity: .6; }
+.papan .ket { font: 500 13px/1.3 var(--mono); color: var(--abu); text-align: right; }
+.papan li.jalan .ket { color: var(--kertas); }
+.papan li.libur { background: var(--kertas-2); }
+.papan li.libur .org { font-size: 26px; color: var(--abu); }
+.papan .kosong-teks { display: block; }
+.papan li.jalan .tag { color: var(--tinta); border-color: var(--kertas); }
+.papan li.jalan .ket::before { content: ""; display: inline-block; width: 8px; height: 8px; background: var(--aksen); margin-right: 7px; }
 
-/* ---------- layar kecil ---------- */
-@media (max-width: 820px) {
-  .dua-kolom { grid-template-columns: 1fr; gap: 32px; }
-}
+@media (max-width: 820px) { .papan li { grid-template-columns: 1fr auto; } .papan .org { grid-column: 1 / -1; grid-row: 2; } .papan .ket { grid-row: 1; grid-column: 2; } }
 @media (max-width: 620px) {
   .halaman { padding: 0 16px 40px; }
   .kop { padding-top: 20px; align-items: flex-start; flex-direction: column; gap: 14px; }
@@ -250,22 +196,13 @@ dialog .dua input { padding: 10px 6px; font-size: 14px; }
   .jam { text-align: left; }
   .jam-angka { font-size: 36px; }
   .tab { gap: 22px; }
-  .panel { padding: 18px 16px 22px; }
-  .p-nama { font-size: 40px; }
-  .shift-jam { font-size: 32px; }
-  .roster .nm { font-size: 26px; }
+  .tgl-besar { font-size: 32px; }
+  .papan .org { font-size: 30px; }
   .tabel { font-size: 14px; }
-  .rincian .hide-s { display: none; }
-  .tombol { grid-template-columns: 1fr; }
-  dialog .dua { grid-template-columns: 1fr; }
 }
-
 @media print {
-  .tab, .banner, .kop .jam, #v-absen, #v-jadwal, .btn, .link, .kontrol, .kaki { display: none !important; }
-  #v-rekap { display: block !important; }
+  .tab, .kop .jam, #v-hari, .btn, .filter, select, .kaki { display: none !important; }
+  #v-jadwal { display: block !important; }
   body { background: #fff; color: #000; }
   .gulung { overflow: visible; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .btn, .roster button, .tab button { transition: background-color .12s, color .12s; }
 }
